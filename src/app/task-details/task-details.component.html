@@ -1,5 +1,13 @@
 <ng-container *ngIf='(task$ | async) as task'>
-  <h3>{{task.info}}</h3>
-  <h4>{{task.assigneeId}}</h4>
-  <h5>{{task.done}}</h5>
+  <div class='card'>
+    <div class='card-header'>
+      Task details
+    </div>
+    <div class='card-body'>
+      <h5 class='card-title'>Special title treatment</h5>
+      <p class='card-text'>Task info: {{task.info}}. Task assignee id: {{task.assigneeId}}. Status: <input
+        type='checkbox' [checked]='task.done' disabled></p>
+      <a (click)='changeStatus(task.done)' class='btn btn-primary'>Mark as done/undone</a>
+    </div>
+  </div>
 </ng-container>

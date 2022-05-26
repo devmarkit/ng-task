@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-import { Observable, shareReplay, tap } from 'rxjs'
+import { catchError, Observable, shareReplay, throwError } from 'rxjs'
 import { Task } from '../models/task'
 
 @Injectable({
@@ -14,10 +14,19 @@ export class TasksService {
     }
 
     addNewTask(task: Task) {
-        return this.httpClient.post(`/tasks`, task).pipe(tap(console.log))
+        return this.httpClient.post(`/tasks`, task).pipe(shareReplay())
     }
 
     getById(taskId: number | string): Observable<Task> {
         return this.httpClient.get<Task>(`/tasks/${taskId}`).pipe(shareReplay())
+    }
+
+    updateTask(task: Task): Observable<Task> {
+        return this.httpClient.put<Task>(`/tasks/${task.id}`, task).pipe(
+            catchError((err) => {
+                return throwError(err)
+            }),
+            shareReplay()
+        )
     }
 }

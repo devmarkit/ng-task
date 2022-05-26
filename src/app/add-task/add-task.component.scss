@@ -1,0 +1,10 @@
+form {
+  display: flex;
+  flex-flow: column nowrap;
+
+  > div {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-bottom: 20px;
+  }
+}

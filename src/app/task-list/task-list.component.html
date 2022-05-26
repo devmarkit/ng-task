@@ -1,12 +1,20 @@
 <ng-container *ngIf='(tasks$ | async) as tasks'>
-  <table>
+  <table class='table'>
+    <thead>
+    <tr>
+      <th scope='col'>ID</th>
+      <th scope='col'>Info</th>
+      <th scope='col'>Assignee Id</th>
+      <th scope='col'>Done status</th>
+    </tr>
+    </thead>
+    <tbody>
     <tr *ngFor='let task of tasks' (click)='showTask(task)'>
-      <td> {{task.id}}</td>
+      <th scope='row'>{{task.id}}</th>
       <td>{{task.info}}</td>
       <td>{{task.assigneeId}}</td>
-      <td> {{task.done}}</td>
+      <td><input type='checkbox' [checked]='task.done' disabled></td>
     </tr>
+    </tbody>
   </table>
 </ng-container>
-
-<button (click)='addTask()'>Add</button>

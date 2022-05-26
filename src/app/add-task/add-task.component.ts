@@ -5,6 +5,7 @@ import { Observable, throwError } from 'rxjs'
 import { UsersService } from '../services/users.service'
 import * as uuid from 'uuid'
 import { Router } from '@angular/router'
+import { User } from '../models/user'
 
 @Component({
     selector: 'app-add-task',
@@ -15,7 +16,7 @@ export class AddTaskComponent implements OnInit {
     // @ts-ignore
     form: FormGroup
     // @ts-ignore
-    users$: Observable<any>
+    users$: Observable<User>
 
     constructor(
         private fb: FormBuilder,

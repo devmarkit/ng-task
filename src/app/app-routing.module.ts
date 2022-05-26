@@ -17,6 +17,10 @@ const routes: Routes = [
         path: 'view/details/:taskId',
         component: TaskDetailsComponent,
     },
+    {
+        path: '**',
+        redirectTo: 'view/tasks',
+    },
 ]
 
 @NgModule({

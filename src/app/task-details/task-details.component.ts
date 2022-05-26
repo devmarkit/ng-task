@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
-import { ActivatedRoute } from '@angular/router'
-import { Observable } from 'rxjs'
+import { ActivatedRoute, Router } from '@angular/router'
+import { map, Observable, tap } from 'rxjs'
 import { TasksService } from '../services/tasks.service'
 import { Task } from '../models/task'
 
@@ -14,12 +14,24 @@ export class TaskDetailsComponent implements OnInit {
 
     constructor(
         private route: ActivatedRoute,
-        private taskService: TasksService
+        private taskService: TasksService,
+        private router: Router
     ) {}
 
     ngOnInit(): void {
         const taskId = this.route.snapshot.paramMap.get('taskId')
         // @ts-ignore
         this.task$ = this.taskService.getById(taskId)
+    }
+
+    changeStatus(status: boolean) {
+        this.task$ = this.task$?.pipe(
+            map((task) => {
+                const taskTmp = { ...task, done: !status }
+                this.taskService.updateTask(taskTmp).subscribe(() => {})
+                return taskTmp
+            }),
+            tap(() => this.router.navigateByUrl('/view/tasks'))
+        )
     }
 }
