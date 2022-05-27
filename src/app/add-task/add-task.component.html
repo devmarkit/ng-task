@@ -9,10 +9,10 @@
           <input type='text' formControlName='info' class='form-control' placeholder='Task info'>
         </div>
         <div>
-          <label>assigneeId</label>
+          <label>assignee</label>
           <select formControlName='assigneeId' class='custom-select' id='inputGroupSelect01'>
             <option selected>Open this select menu</option>
-            <option *ngFor='let user of users' value='{{user.id}}'>{{user.id}}</option>
+            <option *ngFor='let user of users' value='{{user.id}}'>{{user.name}}</option>
           </select>
         </div>
         <div>

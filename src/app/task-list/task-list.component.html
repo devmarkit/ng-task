@@ -1,20 +1,21 @@
-<ng-container *ngIf='(tasks$ | async) as tasks'>
+<ng-container *ngIf='(subscriberData$ | async) as data'>
   <table class='table'>
     <thead>
     <tr>
       <th scope='col'>ID</th>
       <th scope='col'>Info</th>
-      <th scope='col'>Assignee Id</th>
+      <th scope='col'>Assignee</th>
       <th scope='col'>Done status</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor='let task of tasks' (click)='showTask(task)'>
+    <tr *ngFor="let task of data['tasks']" (click)='showTask(task)'>
       <th scope='row'>{{task.id}}</th>
       <td>{{task.info}}</td>
-      <td>{{task.assigneeId}}</td>
+      <td>{{getUsername(task.assigneeId, data['users'])}}</td>
       <td><input type='checkbox' [checked]='task.done' disabled></td>
     </tr>
     </tbody>
   </table>
 </ng-container>
+
