@@ -16,7 +16,7 @@ export class AddTaskComponent implements OnInit {
     // @ts-ignore
     form: FormGroup
     // @ts-ignore
-    users$: Observable<User>
+    users$: Observable<User[]> | undefined
 
     constructor(
         private fb: FormBuilder,

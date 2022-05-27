@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-import { Observable, shareReplay } from 'rxjs'
+import { Observable } from 'rxjs'
+import { User } from '../models/user'
 
 @Injectable({
     providedIn: 'root',
@@ -8,7 +9,7 @@ import { Observable, shareReplay } from 'rxjs'
 export class UsersService {
     constructor(private httpClient: HttpClient) {}
 
-    getAllUsers(): Observable<any> {
-        return this.httpClient.get<any>(`users`).pipe(shareReplay())
+    getAllUsers(): Observable<User[]> {
+        return this.httpClient.get<User[]>(`users`)
     }
 }
