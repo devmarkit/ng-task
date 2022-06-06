@@ -1,4 +1,9 @@
 export interface User {
-    id: string
-    name: string
+    id: number | string
+    email: string
+    password: string
+    firstName: string
+    lastName: string
+    authdata?: string
+    accessToken?: string
 }

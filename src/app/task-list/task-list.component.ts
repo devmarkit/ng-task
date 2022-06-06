@@ -37,6 +37,9 @@ export class TaskListComponent implements OnInit {
     }
 
     getUsername(assigneeId: string, users: User[]): string | undefined {
-        return users.find((element) => element.id == assigneeId)?.name
+        return (
+            users.find((element) => element.id == assigneeId)?.email ||
+            'no user'
+        )
     }
 }

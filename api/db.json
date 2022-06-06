@@ -1,20 +1,22 @@
 {
   "users": [
     {
-      "id": "1234",
-      "name": "John Doe"
+      "email": "test2@gmail.com",
+      "password": "$2a$10$ev9G/bv8WHedtnhLuG7xyeczALT.ebln6Z0/C56eHqwsDfjf1K.4O",
+      "name": "Johhn Doooe",
+      "id": 1
     },
     {
-      "id": "1235",
-      "name": "Jane Doe"
+      "email": "test3@gmail.com",
+      "password": "$2a$10$3rKj2teGGzpR65jKfXrqX.P6fRruKFcSqN8MxdUP8k3gABakcnYyC",
+      "name": "Johhn Doooe",
+      "id": 2
     },
     {
-      "id": "1236",
-      "name": "Mickey Mouse"
-    },
-    {
-      "id": "1237",
-      "name": "Donald Duck"
+      "email": "test4@gmail.com",
+      "password": "$2a$10$b7rZ/CMPBiCkiwGqG0atOOFHaKed2ttM1hEE5r.WP2WQJgWjnfeQO",
+      "name": "Johhn Doooe",
+      "id": 3
     }
   ],
   "tasks": [
@@ -22,19 +24,19 @@
       "id": 1,
       "info": "Write Angular app",
       "assigneeId": "1234",
-      "done": false
+      "done": true
     },
     {
       "id": 2,
       "info": "Prepare task",
       "assigneeId": "1234",
-      "done": true
+      "done": false
     },
     {
       "id": 3,
       "info": "Prepare environment ",
       "assigneeId": "1237",
-      "done": false
+      "done": true
     },
     {
       "id": "0cd308a1-cfa7-4840-b3de-c444eef16f4a",
@@ -64,6 +66,24 @@
       "id": "ffa1586c-392b-4a61-8ec0-fa15cae08863",
       "info": "asdds",
       "assigneeId": "1234",
+      "done": true
+    },
+    {
+      "id": "ce66f9b1-726e-452f-aa8a-2810aa7e368e",
+      "info": "rtest123",
+      "assigneeId": "1237",
+      "done": true
+    },
+    {
+      "id": "2d254c7e-ddc5-40f4-afd3-f956620e6046",
+      "info": "zd",
+      "assigneeId": "hFo-5dR",
+      "done": true
+    },
+    {
+      "id": "cc691936-4820-4e94-ac02-2a727446cdb5",
+      "info": "dsadasd",
+      "assigneeId": "1",
       "done": true
     }
   ]

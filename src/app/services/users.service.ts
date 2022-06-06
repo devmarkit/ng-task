@@ -10,6 +10,6 @@ export class UsersService {
     constructor(private httpClient: HttpClient) {}
 
     getAllUsers(): Observable<User[]> {
-        return this.httpClient.get<User[]>(`users`)
+        return this.httpClient.get<User[]>(`/users`)
     }
 }
