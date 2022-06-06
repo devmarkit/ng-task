@@ -1,9 +1,13 @@
 {
   "/tasks": {
-    "target": "http://localhost:3000",
-    "secure": false
+    "target": "http://localhost:3000/660",
+    "secure": true
   },
   "/users": {
+    "target": "http://localhost:3000/660",
+    "secure": true
+  },
+  "/signin": {
     "target": "http://localhost:3000",
     "secure": false
   }

@@ -12,6 +12,11 @@ module.exports = {
         ecmaVersion: 2018,
         sourceType: 'module',
     },
-    rules: {},
+    rules: {
+        '@typescript-eslint/ban-ts-comment': [
+            'error',
+            { 'ts-ignore': 'allow-with-description' },
+        ],
+    },
     parser: 'babel-eslint',
 }

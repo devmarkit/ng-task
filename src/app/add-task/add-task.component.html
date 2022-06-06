@@ -12,7 +12,7 @@
           <label>assignee</label>
           <select formControlName='assigneeId' class='custom-select' id='inputGroupSelect01'>
             <option selected>Open this select menu</option>
-            <option *ngFor='let user of users' value='{{user.id}}'>{{user.name}}</option>
+            <option *ngFor='let user of users' value='{{user.id}}'>{{user.email}}</option>
           </select>
         </div>
         <div>
